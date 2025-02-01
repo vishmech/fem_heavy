@@ -1,0 +1,40 @@
+/TITLE, CONTINUUM GROUND STRUCTURE
+! Created with:       FlExtract v1.13
+! Element type:       PLANE42
+! Number of nodes:    4
+! Number of elements: 1
+
+/PREP7
+! Element type: ET, type #, name
+ET, 1, PLANE42, , , 3
+
+! Nodal coordinates: 'N', node_id, x-coord, y-coord, z-coord
+N,	1,	0,	0,	0
+N,	2,	0,	1,	0
+N,	3,	1,	0,	0
+N,	4,	1,	1,	0
+
+! Element connectivity: 'EN', element_id,  node_ids
+! Material:             'MP', property_id, material_id, value 
+! Custom property:      'R',  property_id, value 
+! Material 1
+MP,	EX,  	1,	200000
+MP,	PRXY,	1,	0.3
+MP,	DENS,	1,	1
+MP,     SGY,	1,	420
+MP,     N,	1,	0.2
+R, 	1,	1
+! Connectivity
+EN,	1,	1,	3,	4,	2
+
+! Nodal diplacement: 'D', node_id, 'UX / UY', value
+D,	1,	UY,	0
+D,	3,	UY,	0
+D,	3,	UX,	0
+! Nodal load: 'F', node_id, 'FX / FY', value
+!F,	2,	FY,	230
+!F,	4,	FY,	230
+SFE,  1,     3,PRES,0, -600    
+! Surface load: 'SFE', element_id, face_id, 'PRES', 0, value
+
+FINISH
