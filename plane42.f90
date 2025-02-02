@@ -102,19 +102,19 @@ contains
                 GP=1
             end if
 
-            if(i.eq.1 .and. j.eq.2) then
+            if(i.eq.2 .and. j.eq.1) then
                 xi=gconst   !! GP2
                 eta=-gconst
                 GP=2
             end if
 
-            if(i.eq.2 .and. j.eq.1) then
+            if(i.eq.2 .and. j.eq.2) then
                 xi=gconst   !! GP3
                 eta=gconst
                 GP=3
             end if
 
-            if(i.eq.2 .and. j.eq.2) then
+            if(i.eq.1 .and. j.eq.2) then
                 xi=-gconst  !! GP4
                 eta=gconst
                 GP=4
@@ -381,19 +381,19 @@ contains
                 GP=1
             end if
 
-            if(i.eq.1 .and. j.eq.2) then
+            if(i.eq.2 .and. j.eq.1) then
                 xi=gconst   !! GP2
                 eta=-gconst
                 GP=2
             end if
 
-            if(i.eq.2 .and. j.eq.1) then
+            if(i.eq.2 .and. j.eq.2) then
                 xi=gconst   !! GP3
                 eta=gconst
                 GP=3
             end if
 
-            if(i.eq.2 .and. j.eq.2) then
+            if(i.eq.1 .and. j.eq.2) then
                 xi=-gconst  !! GP4
                 eta=gconst
                 GP=4
