@@ -57,38 +57,57 @@ contains
         np = 0
 
         ! Note: From Fortran 2003+ command line arguments are accessible, but not in Fortran90
-        write (*, *)
-        write (*, '("File(s) in current directory: ")')
-        call system('dir') ! Windows
-!        call system('ls' ) ! Linux
-        write (*, *)
-        write (*, '("Enter fem input file (<filename> or enter for previous <filename>)")')
-        write (*, '("Filename?")')
-        read (*, '(a50)') filename
-        if (filename == ' ') then
-            inquire (file = '.fem_filename', exist = fnexist)
-            if (.not. fnexist) then
-                write (*, *)
-                write (*, '("ERROR: previous filename does not exist")')
-                stop
-            end if
-            open (10, file = '.fem_filename')
-            read (10, '(a50)') filename
-            close (10)
+!         write (*, *)
+!         write (*, '("File(s) in current directory: ")')
+!         call system('dir') ! Windows
+! !        call system('ls' ) ! Linux
+!         write (*, *)
+!         write (*, '("Enter fem input file (<filename> or enter for previous <filename>)")')
+!         write (*, '("Filename?")')
+!         read (*, '(a50)') filename
+!         if (filename == ' ') then
+!             inquire (file = '.fem_filename', exist = fnexist)
+!             if (.not. fnexist) then
+!                 write (*, *)
+!                 write (*, '("ERROR: previous filename does not exist")')
+!                 stop
+!             end if
+!             open (10, file = '.fem_filename')
+!             read (10, '(a50)') filename
+!             close (10)
+!         end if
+!         inquire (file = trim(filename), exist = fnexist)
+!         if (.not. fnexist) then
+!             write (*, *)
+!             write (*, '("ERROR: file ", a, " does not exist")') trim(filename)
+!             stop
+!         end if
+
+!         open (10, file = '.fem_filename')
+!         write (10, '(a)') trim(filename)
+!         close (10)
+
+!         write (*, *)
+!         write (*, '("Reading input file ", a)') trim(filename)
+
+
+    ! Get the first command-line argument (input file name)
+        call get_command_argument(1, filename)
+
+        if (len_trim(filename) == 0) then
+            write (*, *) "ERROR: No input file provided"
+            stop
         end if
+    
         inquire (file = trim(filename), exist = fnexist)
         if (.not. fnexist) then
-            write (*, *)
-            write (*, '("ERROR: file ", a, " does not exist")') trim(filename)
+            write (*, *) "ERROR: file ", trim(filename), " does not exist"
             stop
         end if
 
-        open (10, file = '.fem_filename')
-        write (10, '(a)') trim(filename)
-        close (10)
-
         write (*, *)
-        write (*, '("Reading input file ", a)') trim(filename)
+        write (*, '("Reading input file: ", a)') trim(filename)
+        write (*, *)
 
         open (10, file = trim(filename))
 
