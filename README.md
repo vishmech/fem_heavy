@@ -1,4 +1,4 @@
-This is a FEM program developed during FEM Heavy course at DTU.
+This is a FEM program based in FORTRAN, developed during the FEM Heavy course at DTU.
 
 
 ![FEM Deformation](image/deform_eg.png)
