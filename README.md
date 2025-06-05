@@ -1,6 +1,7 @@
 # Introduction 
 
-This is a FEM program based in FORTRAN, developed during the FEM Heavy course at DTU. It is made for 2D plane elements with von-Mises plasticity implemented.
+This is a FEM program based in FORTRAN, developed during the FEM Heavy course at DTU. It is designed for 2D plane elements with von Mises plasticity implemented.
+
 ![FEM Deformation](image/deform_eg.png)
 
 # Installation Guide for X11 Development Libraries and PGPLOT
