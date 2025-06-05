@@ -24,6 +24,15 @@ This installs `libX11.so` and headers required to build X11-linked applications.
 
 ### Installing PGPLOT with gfortran
 
+# Download and extract PGPLOT
+```bash
+cd /tmp
+wget ftp://ftp.astro.caltech.edu/pub/pgplot/pgplot5.2.tar.gz
+tar -xzf pgplot5.2.tar.gz
+cd pgplot
+
+
+
 ```bash
 # Move the PGPLOT archive to /usr/local/src
 sudo mv pgplot5.2.tar.gz /usr/local/src
